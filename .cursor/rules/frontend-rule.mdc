@@ -11,3 +11,70 @@ alwaysApply: false
 - You should use Next.js as it works best with Vercel. 
 - This frontend will ultimately be deployed on Vercel, but it should be possible to test locally. 
 - Always provide users with a way to run the created UI once you have created it.
+## Visual Theme: Scientific Atelier
+
+### Overall Design Philosophy
+Create a sophisticated, welcoming, and modern AI application
+that feels like a research studio rather than a conventional
+corporate dashboard.
+
+The interface should communicate curiosity, intelligence,
+trustworthiness, creativity, and human-centered innovation.
+
+### Color Palette
+- Primary background: Midnight Navy (#101B32)
+- Secondary surfaces: Deep Cobalt (#254D79)
+- Primary accent: Teal (#37C9BA)
+- Light background: Warm Ivory (#F4F6F4)
+- Decorative accent: Muted Gold (#D8AD75)
+- Main text on dark backgrounds: Ivory (#F4F6F4)
+- Main text on light backgrounds: Midnight Navy (#101B32)
+
+### Typography
+- Use elegant, contemporary sans-serif typography.
+- Prioritize readability, hierarchy, and generous spacing.
+- Use larger typography for primary messages.
+- Avoid overly dense or cluttered layouts.
+
+### Interface Components
+- Use softly rounded cards and buttons.
+- Incorporate subtle shadows and refined borders.
+- Use teal for primary interactive elements.
+- Use gold sparingly for decorative emphasis.
+- Include thoughtful hover states and transitions.
+- Maintain consistent spacing throughout the application.
+
+### User Experience
+- Make the interface intuitive for nontechnical users.
+- Use clear instructions and descriptive labels.
+- Provide helpful loading states and error messages.
+- Ensure mobile and desktop responsiveness.
+- Maintain accessible color contrast and keyboard navigation.
+
+### AI Interaction Design
+- Design the AI interaction as a thoughtful conversation.
+- Clearly distinguish user inputs from AI responses.
+- Make system status and processing activity visible.
+- Provide graceful handling of incomplete or failed requests.
+- Never expose API keys or other sensitive credentials.
+## Official Technical Documentation
+
+When building or modifying this application, consult
+the following official documentation:
+
+- Next.js: https://nextjs.org/docs
+- Vercel: https://vercel.com/docs
+
+Use these sources to verify current implementation patterns,
+APIs, routing, configuration, and deployment practices.
+
+Follow the most current stable documentation relevant
+to the project's installed framework versions.
+
+Prioritize official documentation over outdated examples.
+### Design Constraints
+- Avoid generic AI imagery such as glowing robot heads.
+- Prefer abstract scientific patterns and subtle geometric forms.
+- Favor clarity and meaningful interaction over decoration.
+- Keep the application polished without sacrificing performance.
+- Use Next.js and maintain compatibility with Vercel deployment.
