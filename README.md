@@ -1,3 +1,4 @@
+<img width="838" height="679" alt="image" src="https://github.com/user-attachments/assets/fb5622cc-a0dc-4c6b-b44c-d49dae64a83a" />
 
 # A Quiet Room — An AI Supportive Coach
 
