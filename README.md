@@ -1,198 +1,196 @@
-<p align = "center" draggable=”false” ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719" 
-     width="200px"
-     height="auto"/>
-</p>
 
+# A Quiet Room — An AI Supportive Coach
 
-## <h1 align="center" id="heading"> 👋 Welcome to the AI Engineer Challenge</h1>
+### AI Engineering Challenge | AI Makerspace
 
-## 🤖 Your First Vibe Coding LLM Application
+A full-stack LLM application prototype built through AI-assisted development as part of my ongoing AI Engineering Bootcamp.
 
-> New to coding? Start with our [Interactive Dev Environment for LLM Development](https://github.com/AI-Maker-Space/Interactive-Dev-Environment-for-AI-Engineers) guide. It will walk you through setting up the tools and API keys you'll need for the course.
+**[View the source repository](https://github.com/ccustis/The-AI-Engineer-Challenge)**
 
-In this repository, we'll walk you through the steps to create a LLM (Large Language Model) powered application with a vibe-coded frontend!
+## Project Overview
 
-Are you ready? Let's get started!
+This project represents an early step in my transition from leading AI research, governance, and organizational strategy to building and experimentally evaluating AI applications.
 
+Using the AI Makerspace course starter as a foundation, I developed a conversational interface for a supportive AI coach. The application connects a custom Next.js frontend to a Python/FastAPI backend, which uses the OpenAI API to generate responses.
 
-<details>
-  <summary>🏗️ Forking & Cloning This Repository</summary>
+My goals were to understand the components of a functioning LLM application, practice AI-assisted software development, troubleshoot integration problems, and begin identifying questions about reliability, safety, and evaluation.
 
-Before you begin, make sure you have:
+This is an educational prototype, not a production application or a clinically validated mental-health service.
 
-1. 👤 A GitHub account (you'll need to replace `YOUR_GITHUB_USERNAME` with your actual username)
-2. 🔧 Git installed on your local machine
-3. 💻 A code editor (like VS Code, Cursor, etc.)
-4. ⌨️ Terminal access (Mac/Linux) or Command Prompt/PowerShell (Windows)
-5. 🔑 A GitHub Personal Access Token (for authentication)
+## What I Built and Practiced
 
-Got everything in place? Let's move on!
+### 1. Conversational User Interface
 
-1. Fork [this](https://github.com/AI-Maker-Space/The-AI-Engineer-Challenge) repo!
+Developed a custom Next.js/React interface designed for a calm, supportive conversational experience.
 
-     ![image](https://i.imgur.com/bhjySNh.png)
+The interface includes:
 
-1. Clone your newly created repo.
+- Suggested conversation starters
+- A message composer and conversation display
+- In-session conversation history
+- Loading indicators and error feedback
+- Message-length validation
+- Controls to clear the current conversation
 
-     ``` bash
-     # First, navigate to where you want the project folder to be created
-     cd PATH_TO_DESIRED_PARENT_DIRECTORY
+The user experience emphasizes simplicity, readability, and thoughtful interaction.
 
-     # Then clone (this will create a new folder called The-AI-Engineer-Challenge)
-     git clone git@github.com:<YOUR GITHUB USERNAME>/The-AI-Engineer-Challenge.git
-     ```
+### 2. Frontend and Backend Integration
 
-     > Note: This command uses SSH. If you haven't set up SSH with GitHub, the command will fail. In that case, use HTTPS by replacing `git@github.com:` with `https://github.com/` - you'll then be prompted for your GitHub username and personal access token.
+Connected the frontend to the course's FastAPI backend through a `/api/chat` endpoint.
 
-2. Verify your git setup:
+The application uses the OpenAI API to generate responses based on a supportive-coach system instruction.
 
-     ```bash
-     # Check that your remote is set up correctly
-     git remote -v
+I explored how requests move through the application, how API responses are handled, and how configuration and service errors affect the experience.
 
-     # Check the status of your repository
-     git status
+### 3. Conversation Context and Error Handling
 
-     # See which branch you're on
-     git branch
-     ```
+Implemented application logic to include earlier conversation turns in subsequent requests, within a defined context-size budget.
 
-     <!-- > Need more help with git? Check out our [Detailed Git Setup Guide](docs/GIT_SETUP.md) for a comprehensive walkthrough of git configuration and best practices. -->
+The frontend also translates common API failures into understandable messages, including missing configuration, unavailable services, and exhausted API credits.
 
-3. Open the freshly cloned repository inside Cursor!
+Conversation history is held in the active browser session rather than saved in an application database.
 
-     ```bash
-     cd The-AI-Engineering-Challenge
-     cursor .
-     ```
+### 4. Local Development and Deployment Configuration
 
-4. Check out the existing backend code found in `/api/index.py`
+Worked with:
 
-</details>
+- Local Python and Node.js development environments
+- FastAPI and Uvicorn
+- Next.js development and API proxy configuration
+- Environment variables and API credentials
+- Git and GitHub version control
+- Vercel deployment and routing configuration
 
-<details>
-  <summary>⚙️ Backend Setup with uv</summary>
+The repository includes configuration for routing frontend traffic and backend API requests through the application.
 
-1. Install the [`uv`](https://github.com/astral-sh/uv) package manager (`pip install uv`). `uv` will download and manage Python 3.12 for you the first time you run a project command.
-2. From the project root, install dependencies with `uv sync`. This creates `.venv/` (and fetches Python 3.12 automatically if needed).
-3. Set your OpenAI API key in the shell before running the server, for example `export OPENAI_API_KEY=sk-...`.
-4. Start the backend directly from the project root with `uv run uvicorn api.index:app --reload`. The server will run on `http://localhost:8000` with auto-reload enabled for development.
-5. Additional backend details live in `api/README.md`.
+## Technical Architecture
 
-</details>
-
-<details>
-  <summary>🔥Setting Up for Vibe Coding Success </summary>
-
-While it is a bit counter-intuitive to set things up before jumping into vibe-coding - it's important to remember that there exists a gradient betweeen AI-Assisted Development and Vibe-Coding. We're only reaching *slightly* into AI-Assisted Development for this challenge, but it's worth it!
-
-1. Check out the rules in `.cursor/rules/` and add theme-ing information like colour schemes in `frontend-rule.mdc`! You can be as expressive as you'd like in these rules!
-2. We're going to index some docs to make our application more likely to succeed. To do this - we're going to start with `CTRL+SHIFT+P` (or `CMD+SHIFT+P` on Mac) and we're going to type "custom doc" into the search bar. 
-
-     ![image](https://i.imgur.com/ILx3hZu.png)
-3. We're then going to copy and paste `https://nextjs.org/docs` into the prompt.
-
-     ![image](https://i.imgur.com/psBjpQd.png)
-
-4. We're then going to use the default configs to add these docs to our available and indexed documents.
-
-     ![image](https://i.imgur.com/LULLeaF.png)
-
-5. After that - you will do the same with Vercel's documentation. After which you should see:
-
-     ![image](https://i.imgur.com/hjyXhhC.png) 
-
-</details>
-
-<details>
-  <summary>😎 Vibe Coding a Front End for the FastAPI Backend</summary>
-
-1. Use `Command-L` or `CTRL-L` to open the Cursor chat console. 
-
-2. Set the chat settings to the following:
-
-     ![image](https://i.imgur.com/LSgRSgF.png)
-
-3. Ask Cursor to create a frontend for your application. Iterate as much as you like!
-
-4. Run the frontend using the instructions Cursor provided. 
-
-> NOTE: If you run into any errors, copy and paste them back into the Cursor chat window - and ask Cursor to fix them!
-
-> NOTE: You have been provided with a backend in the `/api` folder - please ensure your Front End integrates with it!
-
-</details>
-
-<details>
-  <summary>🚀 Deploying Your First LLM-powered Application with Vercel</summary>
-
-1. Ensure you have signed into [Vercel](https://vercel.com/) with your GitHub account.
-
-2. Ensure you have `npm` (this may have been installed in the previous vibe-coding step!) - if you need help with that, ask Cursor!
-
-3. Run the command:
-
-     ```bash
-     npm install -g vercel
-     ```
-
-4. Run the command:
-
-     ```bash
-     vercel
-     ```
-
-5. Follow the in-terminal instructions. (Below is an example of what you will see!)
-
-     ![image](https://i.imgur.com/D1iKGCq.png)
-
-6. Once the build is completed - head to the provided link and try out your app!
-
-> NOTE: Remember, if you run into any errors - ask Cursor to help you fix them!
-
-### Vercel Link to Share
-
-You'll want to make sure you share you *domains* hyperlink to ensure people can access your app!
-
-![image](https://i.imgur.com/mpXIgIz.png)
-
-> NOTE: Test this is the public link by trying to open your newly deployed site in an Incognito browser tab!
-
-</details>
-
----
-
-## 📦 Submission Instructions
-
-1. 🏗️ Build: Commit and push your changes to your remote on GitHub
-2. 🚢 Ship: Deploy your app to Vercel
-3. 🚀 Share: Submit your completed challenge through the [Typeform submission link](https://maven.com/aimakerspace/admin/courses/ai-eng-bootcamp/syllabus/modules/TYPEFORM_LINK).
-
-</details>
-
-### 🎉 Congratulations! 
-
-You just 🏗️ built, 🚢 shipped, and 🚀 shared your first LLM-powered application! 🚀🚀🚀 
-
-**But why stop there?**
-
-Get on linkedin and post your results and experience! Make sure to tag us at @AIMakerspace!
-
-Here's a template to get your post started!
-
+```text
+User / Browser
+      |
+      v
+Next.js / React Interface
+      |
+      | POST /api/chat
+      v
+FastAPI Backend
+      |
+      v
+OpenAI API
+      |
+      v
+Generated Response
+      |
+      v
+Conversation Interface
 ```
-🚀🎉 Exciting News! 🎉🚀
 
-🏗️ Today, I'm thrilled to announce that I've successfully built and shipped my first-ever LLM using the powerful combination of , and the OpenAI API! 🖥️
+### Technology Stack
 
-Check it out 👇
-[LINK TO APP]
+| Component | Technology |
+|-----------|------------|
+| Frontend | Next.js, React, TypeScript |
+| Backend | Python, FastAPI |
+| LLM integration | OpenAI API |
+| Development | Cursor, Git, GitHub |
+| Python environment | uv |
+| Deployment configuration | Vercel |
 
-A big shoutout to the @AI Makerspace for all making this possible. Couldn't have done it without the incredible community there. 🤗🙏
+### Key Implementation Files
 
-Looking forward to building with the community! 🙌✨ Here's to many more creations ahead! 🥂🎉
+- [Frontend interface](frontend/components/ChatStudio.tsx)
+- [API client and context handling](frontend/lib/chat.ts)
+- [FastAPI backend](api/index.py)
+- [Local API proxy configuration](frontend/next.config.ts)
+- [Vercel configuration](vercel.json)
 
-Who else is diving into the world of AI? Let's connect! 🌐💡
+## Running the Project Locally
 
-#FirstLLMApp 
+### Backend
+
+From the project root:
+
+```bash
+uv sync
+export OPENAI_API_KEY="your-api-key"
+uv run uvicorn api.index:app --reload
 ```
+
+The API runs at `http://127.0.0.1:8000`.
+
+### Frontend
+
+In a second terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open `http://localhost:3000` in your browser.
+
+A valid OpenAI API key and available API credits are required for model-generated responses.
+
+## What I Learned
+
+This exercise helped me develop practical understanding of:
+
+- The distinction between an LLM, an API, and an application built around the model
+- The roles of frontend, backend, and model-provider services
+- System instructions and conversation-context management
+- How failures in configuration, connectivity, or API access affect application behavior
+- The opportunities and limitations of AI-assisted coding
+- The importance of testing the complete application rather than assuming that functioning components guarantee a functioning system
+
+### A Larger Research Question
+
+My previous research with Partnership on AI examined how documentation can make AI transparency and accountability more actionable.
+
+Building this prototype brings that question into a technical setting:
+
+**What evidence would establish that an AI application is not only functional, but also reliable, safe, and appropriately governed?**
+
+A working interface and successful API response do not establish answer quality, user safety, or dependable behavior across different situations.
+
+## Current Limitations
+
+This is an introductory prototype. It is not a trained or fine-tuned model, a production-grade assistant, or a validated safety system.
+
+Important limitations include:
+
+- No systematic evaluation benchmark has yet been documented
+- No demonstrated reliability or safety performance metrics
+- No persistent conversation database
+- No retrieval-augmented generation or external-tool integration
+- No implemented specialized clinical-safety assessment
+- Dependence on the availability and billing status of the model API
+
+Although the interface keeps conversation history in the browser session, submitted messages are sent to the backend and OpenAI API. Users should not enter sensitive personal information.
+
+## Next Steps: From Application Development to Evaluation
+
+My next goal is to extend this learning into empirical AI safety research.
+
+Planned investigations include:
+
+1. **Behavioral evaluation:** Test responses across defined scenarios and evaluate consistency, instruction following, and failure patterns.
+2. **Safety and boundary testing:** Investigate how the system handles ambiguous, sensitive, or potentially harmful requests.
+3. **Traceability:** Develop better visibility into requests, responses, failures, and the evidence available to reviewers.
+4. **Comparative evaluation:** Introduce alternative prompts or interventions and compare outcomes using reproducible measures.
+
+These are planned research directions, not completed features.
+
+## Project Origins and Acknowledgments
+
+This application was developed as part of the [AI Makerspace AI Engineer Challenge](https://github.com/AI-Maker-Space/The-AI-Engineer-Challenge).
+
+The challenge provided the starter repository, initial backend foundation, and instructional framework. My work focused on configuring and extending the application, developing its user experience through AI-assisted coding, connecting its components, troubleshooting integration, and reflecting on the technical and research implications.
+
+## About This Learning Journey
+
+I am a computer scientist, researcher, and organizational strategist with a background in AI governance, technical systems, and interdisciplinary research.
+
+My current technical development is focused on connecting that foundation to practical LLM engineering, experimentation, and evaluation.
+
+The larger objective is to contribute to AI research that moves beyond statements of responsible practice toward observable, testable evidence of trustworthy system behavior.
